@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.eindopdrachtandroid.model.Post;
@@ -105,5 +106,12 @@ public class MainActivity extends AppCompatActivity {
             prefs.edit().putBoolean("loaded", true);
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
 
 }
