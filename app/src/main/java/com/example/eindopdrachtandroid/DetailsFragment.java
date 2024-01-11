@@ -1,5 +1,7 @@
 package com.example.eindopdrachtandroid;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.eindopdrachtandroid.model.Post;
@@ -66,6 +69,18 @@ public class DetailsFragment extends Fragment {
         detailAdres.setText(p.getAdres());
         detailDistrict.setText(p.getDistrict());
         detailtype.setText(p.getType());
+
+        Button addressBTN = view.findViewById(R.id.btnAdress);
+
+        addressBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("geo:" + latitude.getText() + "," + longitude.getText());
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, uri);
+
+                startActivity(mapIntent);
+            }
+        });
 
 
     }
