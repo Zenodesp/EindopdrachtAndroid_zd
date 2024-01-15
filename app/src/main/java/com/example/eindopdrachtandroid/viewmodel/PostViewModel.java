@@ -23,6 +23,7 @@ public class PostViewModel extends AndroidViewModel {
     PostDatabase postDatabase;
 
 
+    // Aantal threads beschikbaar instellen
     public PostViewModel(@NonNull Application application) {
         super(application);
         mExec = Executors.newFixedThreadPool(3);

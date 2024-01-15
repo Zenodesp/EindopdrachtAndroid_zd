@@ -101,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Als alles ingeladen is, edit de prefs om ervoor te zorgen dat men alles niet twee keer afprint
+
         if(!prefs.contains("loaded")){
             backgroundThread.start();
             prefs.edit().putBoolean("loaded", true);
